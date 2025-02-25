@@ -1,0 +1,190 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px; /* Added some padding */
+  margin: 0px 0px 18px 0px;
+  background-color: var(--unnamed-color-ffffff);
+  color: var(--unnamed-color-072635);
+  font-size:var(--unnamed-font-size-14);
+  /* width: 100%; never*/
+  max-width: 100vw; /* Prevent horizontal overflow */
+  overflow: hidden;
+  border-radius: 70px;
+}
+
+/* Fixing flex items causing overflow */
+.menu {
+  flex: 1; /* Takes available space */
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Prevents overflow */
+}
+
+.menu ul li img{
+  max-width: 23px;
+  margin: auto 5px;
+}
+
+.menu ul li a{
+  margin: 5px;
+  text-decoration: none;
+  color: var(--unnamed-color-072635);
+
+}
+
+/* Prevents images from exceeding width */
+.logo img,
+.user-avatar,
+.menu-icon {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo{
+  margin-left: 32px;
+}
+/* Prevent user info from causing overflow */
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevents shrinking */
+  gap: 15px;
+}
+
+.user-details {
+  display: flex;
+}
+
+.user-avatar {
+  margin: auto 4px;
+
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto 4px;
+}
+
+.user-role {
+  color: var(--unnamed-color-707070)
+}
+
+.setting-icon{
+  margin: auto 12px ;
+}
+
+.menu-icon{
+  margin-right: 32px;
+}
+
+/*
+
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding:5px;
+  background-color: var(--unnamed-color-072635); 
+  color: var(--unnamed-color-ffffff); 
+}
+
+.logo img {
+  height: 40px; 
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; 
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--unnamed-color-ffffff); 
+}
+
+.menu ul li a:hover {
+  color: var(--unnamed-color-01f0d0); 
+}
+
+.login-button {
+  background-color: var(--unnamed-color-ff6200);
+  color: var(--unnamed-color-ffffff); 
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: var(--unnamed-color-007bc7);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.user-profile img {
+  height: 30px; 
+  border-radius: 50%;
+}
+
+.user-profile span {
+  font-weight: bold;
+}
+
+
+
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  border-radius: 50%;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+
+these are my styles, why is there an horizontal scroll bar getting addd width of the hader is exceeding
+*/

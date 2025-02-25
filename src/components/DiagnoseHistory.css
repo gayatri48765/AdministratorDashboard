@@ -1,0 +1,59 @@
+.diagnose-history{
+    padding: 20px;
+    background-color: var(--unnamed-color-ffffff);
+
+}
+
+.info-cards{
+    display: flex;
+    width: 100%;
+    margin:20px auto;
+    gap: 21px;
+}
+
+.info-card{
+    flex-grow: 1;
+border-radius: 12px;
+opacity: 1;
+padding-top: 16px;
+padding-left: 16px;
+padding-bottom: 16px;
+}
+
+.info-card:nth-child(1) {
+    background: #E0F3FA 0% 0% no-repeat padding-box;
+}
+
+.info-card:nth-child(2) {
+    background: #FFE6E9 0% 0% no-repeat padding-box;
+}
+
+.info-card:nth-child(3) {
+    background: #FFE6F1 0% 0% no-repeat padding-box;
+}
+
+
+.info-card img{
+    max-width: 96px ;
+    width: 100;
+    margin-bottom: 16px;
+
+}
+
+.info-card h5{
+    margin: 0px;
+    font: var(--unnamed-font-style-normal) normal medium 16px/22px var(--unnamed-font-family-manrope);
+}
+
+.info-card h1 {
+    margin-top: 0px;
+    margin-bottom: 17px;
+    font: normal normal 800 30px/41px Manrope;
+    /* font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800) 30px/41px var(--unnamed-font-family-manrope); */
+}
+
+.info-card p{
+    margin: 0px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+
+}

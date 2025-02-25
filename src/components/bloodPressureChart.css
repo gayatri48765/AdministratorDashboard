@@ -1,0 +1,21 @@
+/* BloodPressureChart.css */
+.blood-pressure-chart {
+    width: 100%;
+    max-width: 800px; /* Adjust based on your design */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Use your design color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+  
+  .blood-pressure-chart h2 {
+    font-size: 24px;
+    color: #072635; /* Use your design color */
+    margin-bottom: 20px;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 400px; /* Adjust the height of the chart */
+  }

@@ -1,0 +1,32 @@
+.lab-results {
+    background-color: var(--unnamed-color-ffffff);
+    padding: 20px;
+    font-size: var(--unnamed-font-size-14);
+
+}
+
+.lab-results  h2{
+    font-size: var(--unnamed-font-size-24);
+
+}
+
+.lab-results .list-item{
+    padding: 11px 16px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scrollable-list {
+    height: 207px; /* Fixed height for scrollable list */
+    overflow-y: auto; /* Adds vertical scroll */
+  }
+  
+  .list-item:hover {
+    background-color: #f0f0f0; /* Hover effect */
+  }
+  
+  .list-item span {
+    font-size: 14px;
+  }

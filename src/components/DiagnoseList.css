@@ -1,0 +1,47 @@
+/* DiagnosticListTable.css */
+.diagnostic-list-table {
+    width: 100%;
+    max-width: 800px; /* Adjust based on your design */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Use your design color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+  
+  .diagnostic-list-table h2 {
+    font-size: 24px;
+    color: #072635; /* Use your design color */
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Removes spacing between table cells */
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Adds a border between rows */
+  }
+  
+  th {
+    font-weight: bold;
+    /* color: #072635; Use your design color */
+  }
+
+  thead{
+    background: #F6F7F8 0% 0% no-repeat padding-box;
+  }
+
+ tr th{
+    background: #F6F7F8 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    opacity: 1;
+         
+  }
+  
+  tr:hover {
+    background-color: #f0f0f0; /* Hover effect for rows */
+  }

@@ -1,0 +1,55 @@
+/* Patients.css */
+.patients-section {
+    border-radius: 8px;
+    padding: 22px 0px 33px 22px;
+    background-color: var(--unnamed-color-ffffff);
+
+  }
+  
+  .patients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+  }
+  
+  .patients-header h2 {
+    color: var(--unnamed-color-072635); /* Use your design color */
+  }
+  
+  .search-icon img {
+    cursor: pointer;
+  }
+  
+  .patients-list {
+    height: 1054px; /* Fixed height for scrollable list */
+    overflow-y: auto; /* Adds vertical scroll */
+  }
+  
+  .patient-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--unnamed-color-ffffff); /* Use your design color */
+    border-radius: 8px;
+    margin-right: 20px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+  }
+  
+  .patient-photo img {
+  }
+  
+  .patient-info {
+    flex: 1; /* Takes remaining space */
+  }
+  
+  .patient-info h3 {
+    margin: 0;
+  }
+  
+  .patient-info p {
+    margin: 5px 0 0;
+  }
+  
+  .patient-menu img {
+    cursor: pointer;
+  }
