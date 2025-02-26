@@ -1,13 +1,19 @@
 // components/BloodPressureChart/BloodPressureChart.js
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Chart, registerables } from 'chart.js';
 import './bloodPressureChart.css';
+import expandIcon from './images/icons/expand.png'
+import arrowUp from './images/icons/ArrowUp.svg'
 
+import arrowDown from './images/icons/ArrowDown.svg'
 
 Chart.register(...registerables); // Register all Chart.js components
 
 const BloodPressureChart = ({diagnosisHistory}) => {
   const chartRef = useRef(null); // Ref for the chart canvas
+  const [highestDiastolic,setHighestDiastolic]=useState({})
+  const [highestSystolic,setHighestSystolic]=useState({})
+
 
   useEffect(() => {
   
@@ -17,24 +23,41 @@ const BloodPressureChart = ({diagnosisHistory}) => {
   // Initialize systolic and diastolic arrays
   const systolicValues = firstFiveRecords.map(record => record.blood_pressure.systolic.value);
   const diastolicValues = firstFiveRecords.map(record => record.blood_pressure.diastolic.value);
+  console.log(firstFiveRecords)
+
+  let highestSystolic = { value: -Infinity, levels: "" };
+let highestDiastolic = { value: -Infinity, levels: "" };
+
+firstFiveRecords.forEach(record => {
+    const { systolic, diastolic } = record.blood_pressure;
+
+    if (systolic.value > highestSystolic.value) {
+      setHighestSystolic( { value: systolic.value, levels: systolic.levels })
+    }
+
+    if (diastolic.value > highestDiastolic.value) {
+        setHighestDiastolic( { value: diastolic.value, levels: diastolic.levels })
+    }
+});
+
   
   // Define the updated data object
   const data = {
-      labels: firstFiveRecords.map((record, index) => `Record ${index + 1}`), // Generic labels
+      labels: firstFiveRecords.map((record, index) => ` ${record.month.slice(0,3)},${record.year}`), // Generic labels
       datasets: [
           {
               label: 'Systolic Blood Pressure',
               data: systolicValues,
-              borderColor: '#FF6200', // Orange color for systolic
-              backgroundColor: 'rgba(255, 98, 0, 0.2)', // Light orange fill
+              borderColor: '#E66FD2', // Orange color for systolic
+              backgroundColor: '#E66FD2',// Light orange fill
               borderWidth: 2,
               tension: 0.4, // Smooth line
           },
           {
               label: 'Diastolic Blood Pressure',
               data: diastolicValues,
-              borderColor: '#007BC7', // Blue color for diastolic
-              backgroundColor: 'rgba(0, 123, 199, 0.2)', // Light blue fill
+              borderColor: '#8C6FE6', // Blue color for diastolic
+              backgroundColor: '#8C6FE6', // Light blue fill
               borderWidth: 2,
               tension: 0.4, // Smooth line
           },
@@ -43,55 +66,62 @@ const BloodPressureChart = ({diagnosisHistory}) => {
   
   // Output result to console (for debugging)
   console.log(data);
-  
-
-    // const data = {
-    //   labels: ['Oct, 2023', 'Nov, 2023', 'Dec, 2023', 'Jan, 2024', 'Feb, 2024', 'Mar, 2024'], // Years
-    //   datasets: [
-    //     {
-    //       label: 'Systolic Blood Pressure',
-    //       data: [120, 125, 130, 128, 132], // Example data
-    //       borderColor: '#FF6200', // Orange color for systolic
-    //       backgroundColor: 'rgba(255, 98, 0, 0.2)', // Light orange fill
-    //       borderWidth: 2,
-    //       tension: 0.4, // Smooth line
-    //     },
-    //     {
-    //       label: 'Diastolic Blood Pressure',
-    //       data: [80, 82, 85, 83, 84], // Example data
-    //       borderColor: '#007BC7', // Blue color for diastolic
-    //       backgroundColor: 'rgba(0, 123, 199, 0.2)', // Light blue fill
-    //       borderWidth: 2,
-    //       tension: 0.4, // Smooth line
-    //     },
-    //   ],
-    // };
 
     // Chart configuration
+    // const config = {
+    //   type: 'line', // Line chart
+    //   data: data,
+    //   options: {
+    //     responsive: true,
+    //     maintainAspectRatio: false,
+    //     scales: {
+    //       y: {
+    //         beginAtZero: false,
+    //         title: {
+    //           display: true,
+    //           text: 'Blood Pressure (mmHg)',
+    //         },
+    //       },
+    //       x: {
+    //         title: {
+    //           display: true,
+    //           text: 'Year',
+    //         },
+    //       },
+    //     },
+    //     plugins: {
+    //       legend: {
+    //         position: 'top', // Position of the legend
+    //       },
+    //       tooltip: {
+    //         enabled: true, // Enable tooltips
+    //       },
+    //     },
+    //   },
+    // };
+
     const config = {
-      type: 'line', // Line chart
+      type: 'line',
       data: data,
       options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: false, // Allow height to be controlled
         scales: {
           y: {
             beginAtZero: false,
             title: {
               display: true,
-              text: 'Blood Pressure (mmHg)',
             },
           },
           x: {
             title: {
               display: true,
-              text: 'Year',
             },
           },
         },
         plugins: {
           legend: {
-            position: 'top', // Position of the legend
+            display: false, // Disable the legend
           },
           tooltip: {
             enabled: true, // Enable tooltips
@@ -111,11 +141,30 @@ const BloodPressureChart = ({diagnosisHistory}) => {
 
   return (
     <div className="blood-pressure-chart">
-      <h2>Blood Pressure Over Time</h2>
+    <div >
+      <div className='bp-heading'><h2>Blood Pressure</h2><p>Last 6 months<img className="expand-icon" src={expandIcon}/></p></div>
       <div className="chart-container">
-        <canvas ref={chartRef}></canvas>
+        <div className='canvas'>
+        <canvas style={{height:'263px', width:'100%', maxWidth:'480px'}} ref={chartRef}></canvas>
+        </div>
       </div>
     </div>
+     <div className='chart-info'>
+     <div>
+     <h3>
+<span className="circle-1"></span> Systolic
+</h3>
+     <h1>{highestSystolic.value}</h1>
+     <p><img src={arrowUp} className="arrowUp"/>{highestSystolic.levels}</p>
+   </div>
+   <div>
+     <h3><span className="circle-2"></span>Systolic</h3>
+     <h1>{highestDiastolic.value}</h1>
+     <p><img src={arrowDown} className="arrowDown"/> {highestDiastolic.levels}</p>
+   </div>
+   
+   </div>
+   </div>
   );
 };
 

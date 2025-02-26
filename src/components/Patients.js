@@ -57,7 +57,7 @@ const PatientCard = ({ patient }) => (
     <div className="patient-photo">
       <img src={patient.photo} alt={patient.name} />
     </div>
-    <div className="patient-info">
+    <div className="patientList-info">
       <h3>{patient.name}</h3>
       <p>{patient.gender}, {patient.age}</p>
     </div>

@@ -1,27 +1,35 @@
 /* DiagnosticListTable.css */
+.diagnose-list{
+margin:33px auto;
+    border-radius: 16px;
+}
+
 .diagnostic-list-table {
-    width: 100%;
-    max-width: 800px; /* Adjust based on your design */
+  border-radius: 16px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff; /* Use your design color */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   }
   
   .diagnostic-list-table h2 {
     font-size: 24px;
     color: #072635; /* Use your design color */
     margin-bottom: 20px;
+    margin-top: 0px;
   }
   
   table {
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse; /* Removes spacing between table cells */
+  }
+
+
+  thead th, td {
+padding:15px 12px;
   }
   
   th, td {
-    padding: 12px;
+    padding: 20px 12px;
     text-align: left;
     border-bottom: 1px solid #ddd; /* Adds a border between rows */
   }
@@ -31,17 +39,48 @@
     /* color: #072635; Use your design color */
   }
 
-  thead{
-    background: #F6F7F8 0% 0% no-repeat padding-box;
+
+  thead tr th{
+    border: none;
+    background-color: #f6f7f8;
   }
 
- tr th{
-    background: #F6F7F8 0% 0% no-repeat padding-box;
-    border-radius: 24px;
-    opacity: 1;
-         
-  }
+  thead tr th:first-child {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px; /* Optional: if you want the bottom corners rounded too */
+}
+
+thead tr th:nth-child(3) {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px; /* Optional */
+}
+
   
   tr:hover {
     background-color: #f0f0f0; /* Hover effect for rows */
   }
+
+  .diagnostic-list-table tbody {
+    height: 178px;
+    overflow-y: auto;
+    display: block;
+  }
+  
+  .diagnostic-list-table thead,
+  .diagnostic-list-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+.diagnostic-list-table thead {
+    /* position: sticky; */
+    /* top: 0;
+    background: white;
+    z-index: 1; */
+}
+
+.diagnostic-list-table tbody {
+    /* display: block;
+    max-height: 140px;
+    overflow-y: auto; */
+}

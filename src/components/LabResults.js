@@ -3,13 +3,9 @@ import './labResults.css';
 import downloadIcon from './images/icons/download_FILL0_wght300_GRAD0_opsz24 (1).svg'
 
 const LabResults = ({ labResults }) => {
-  // Default data if labResults is not provided
-  const results = '' || ['Result 1', 'Result 2', 'Result 3', 'Result 4', 'Result 5'];
-
-  // Handle item click
+  const results = labResults || ['Result 1', 'Result 2', 'Result 3', 'Result 4', 'Result 5'];
   const handleItemClick = (result) => {
     console.log('Clicked:', result);
-    // Add your click handling logic here
   };
 
   return (
@@ -23,7 +19,7 @@ const LabResults = ({ labResults }) => {
             onClick={() => handleItemClick(result)}
           >
             <span>{result}</span>
-            <img src={downloadIcon}/> {/* Replace with your icon */}
+            <img src={downloadIcon}/>  
           </div>
         ))}
       </div>

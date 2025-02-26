@@ -1,21 +1,112 @@
 /* BloodPressureChart.css */
 .blood-pressure-chart {
-    width: 100%;
+    /* width: 100%; */
     max-width: 800px; /* Adjust based on your design */
     margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff; /* Use your design color */
+    padding: 16px;
+    padding-bottom: 0px;
+    background-color: #F4F0FE; /* Use your design color */
     border-radius: 8px;
+  /* grid-template-columns: 3fr 1fr;   */
+
+    display: grid;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   }
   
   .blood-pressure-chart h2 {
-    font-size: 24px;
+    font-size: 18px;
     color: #072635; /* Use your design color */
     margin-bottom: 20px;
   }
   
-  .chart-container {
-    position: relative;
-    height: 400px; /* Adjust the height of the chart */
+  .bp-heading{
+    display: flex;
+    font-size: 14px;
+    margin: 0;
+    padding-right: 40px;
+    flex-direction: row;
+    justify-content: space-between;
   }
+  .bp-heading p{
+    margin: 0px;
+  }
+
+  .expand-icon{
+    margin-left: 16px;
+  }
+  
+  .chart-container {
+    
+    gap: 20px; /* Optional: Adds space between grid items */
+  }
+  
+
+.blood-pressure-chart .chart-container .canvas {
+    /* width: 100%;
+    height: 100%;
+    max-width: 417px !important;
+    max-height: 187px !important; */
+}
+  
+  .chart-info{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .chart-info > div:first-child {
+    border-bottom: 1px solid #CBC8D4; /* Adjust color as needed */
+    padding-bottom: 8px; /* Adds spacing between the border and content */
+    margin-bottom: 16px; /* Adds spacing between the two divs */
+  }
+  
+
+.chart-info h3{
+  margin-bottom: 8px;
+  margin: 0px;
+
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+
+.chart-info h1{
+  margin-bottom: 8px;
+  margin: 0px;
+  color: var(--unnamed-color-072635);
+text-align: left;
+font-size: 22px;
+font-style: bold;
+}
+
+.chart-info p{
+  margin: 0px;
+
+  margin-bottom: 8px;
+  font-size: 14px;
+
+}
+
+.circle-1 {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color:  #E66FD2; /* Change color as needed */
+  border-radius: 50%; /* Makes it a circle */
+  margin-right: 4px; /* Adds spacing between text and circle */
+}
+
+
+.circle-2 {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #8C6FE6;
+  border-radius: 50%; /* Makes it a circle */
+  margin-right: 4px /* Adds spacing between text and circle */
+}
+
+.arrowUp, .arrowDown{
+  margin-right: 8px;
+}

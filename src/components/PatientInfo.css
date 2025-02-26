@@ -41,12 +41,16 @@
 .info-content h3{
     font-size: var(--unnamed-font-size-14);
     font-weight: 400;
+    margin-bottom: 4px;
+    margin: 0px;
     
 }
 
 .info-content p{
     font-size: var(--unnamed-font-size-14);
     font-weight: bold;
+    margin: 0px;
+
 }
 
 .info-icon{

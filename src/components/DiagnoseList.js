@@ -13,7 +13,7 @@ const DiagnoseList = ({ diagnostic_list }) => {
   }, [diagnostic_list]); // Depend on diagnostic_list so it updates if the prop changes
 
   return (
-    <section>
+    <div className='diagnose-list'>
       {!loading ? (
         <div className="diagnostic-list-table">
           <h2>Diagnostic List</h2>
@@ -39,7 +39,7 @@ const DiagnoseList = ({ diagnostic_list }) => {
       ) : (
         <p>Loading...</p>
       )}
-    </section>
+    </div>
   );
 };
 

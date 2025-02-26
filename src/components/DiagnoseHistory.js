@@ -6,8 +6,12 @@ import RespRate from './images/respiratory rate.png'
 import Temperature from './images/temperature.png'
 
 const DiagnoseHistory = ({ diagnosisHistory }) => {
+
+  const { value: heartRate } = diagnosisHistory[0].heart_rate;
+const { value: respiratoryRate } = diagnosisHistory[0].respiratory_rate;
+const { value: temperature } = diagnosisHistory[0].temperature;
   return (
-    <section className="diagnose-history">
+    <div className="diagnose-history">
       <h2>Diagnosis History</h2>
       <BloodPressureChart diagnosisHistory={diagnosisHistory} />
 
@@ -17,7 +21,7 @@ const DiagnoseHistory = ({ diagnosisHistory }) => {
           <img src={RespRate} alt="Icon 1" /> {/* Replace with your image path */}
           <div className="info-text">
             <h5>Respiratory Rate</h5>
-            <h1>20 bpm</h1>
+            <h1>{respiratoryRate}bpm</h1>
             <p>Normal</p>
           </div>
         </div>
@@ -26,7 +30,7 @@ const DiagnoseHistory = ({ diagnosisHistory }) => {
           <img src={Temperature} alt="Icon 2" /> {/* Replace with your image path */}
           <div className="info-text">
             <h5>Temperature</h5>
-            <h1>98.6°F</h1>
+            <h1>{temperature}°F</h1>
             <p>Normal</p>
           </div>
         </div>
@@ -35,12 +39,12 @@ const DiagnoseHistory = ({ diagnosisHistory }) => {
           <img src={heartBPM} alt="Icon 3" /> {/* Replace with your image path */}
           <div className="info-text">
             <h5>Heart Rate</h5>
-            <h1>78 bpm</h1>
+            <h1>{heartRate}bpm</h1>
             <p>Lower than Average</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

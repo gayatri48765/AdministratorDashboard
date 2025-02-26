@@ -1,13 +1,19 @@
 .diagnose-history{
     padding: 20px;
     background-color: var(--unnamed-color-ffffff);
+    border-radius: 16px;
 
+}
+
+.diagnose-history h2{
+    margin: 0px;
+    margin-bottom: 28px;
 }
 
 .info-cards{
     display: flex;
     width: 100%;
-    margin:20px auto;
+    margin:20px auto 0px;
     gap: 21px;
 }
 
