@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './DiagnoseList.css'
+import './css/DiagnoseList.css'
 
 const DiagnoseList = ({ diagnostic_list }) => {
   const [loading, setLoading] = useState(true);
@@ -7,11 +7,10 @@ const DiagnoseList = ({ diagnostic_list }) => {
 
   useEffect(() => {
     if (diagnostic_list && diagnostic_list.length > 0 && Array.isArray(diagnostic_list)) {
-      setList(diagnostic_list); // Use diagnostic_list directly
+      setList(diagnostic_list); 
       setLoading(false);
     }
-  }, [diagnostic_list]); // Depend on diagnostic_list so it updates if the prop changes
-
+  }, [diagnostic_list]);  
   return (
     <div className='diagnose-list'>
       {!loading ? (

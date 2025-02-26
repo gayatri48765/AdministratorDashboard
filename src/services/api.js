@@ -1,14 +1,7 @@
-// services/api.js
-
-/**
- * Fetches patient data from the API.
- * @returns {Promise<Object>} Patient data.
- * @throws {Error} If the request fails.
- */
-export const fetchPatientData = async () => {
-    const apiUrl ='https://fedskillstest.coalitiontechnologies.workers.dev' // Replace with your API URL
-    const username = 'coalition'; // Replace with your username
-    const password = 'skills-test'; // Replace with your password
+ export const fetchPatientData = async () => {
+    const apiUrl ='https://fedskillstest.coalitiontechnologies.workers.dev'  
+    const username = 'coalition'; 
+    const password = 'skills-test';
     const authHeader = `Basic ${btoa(`${username}:${password}`)}`;
   
     const response = await fetch(apiUrl, {

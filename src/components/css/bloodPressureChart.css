@@ -1,21 +1,17 @@
-/* BloodPressureChart.css */
 .blood-pressure-chart {
-    /* width: 100%; */
-    max-width: 800px; /* Adjust based on your design */
+    max-width: 800px;  
     margin: 0 auto;
     padding: 16px;
     padding-bottom: 0px;
-    background-color: #F4F0FE; /* Use your design color */
+    background-color: #F4F0FE; 
     border-radius: 8px;
-  /* grid-template-columns: 3fr 1fr;   */
-
     display: grid;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
   }
   
   .blood-pressure-chart h2 {
     font-size: 18px;
-    color: #072635; /* Use your design color */
+    color: #072635;  
     margin-bottom: 20px;
   }
   
@@ -37,16 +33,9 @@
   
   .chart-container {
     
-    gap: 20px; /* Optional: Adds space between grid items */
+    gap: 20px;  
   }
   
-
-.blood-pressure-chart .chart-container .canvas {
-    /* width: 100%;
-    height: 100%;
-    max-width: 417px !important;
-    max-height: 187px !important; */
-}
   
   .chart-info{
     text-align: left;
@@ -56,9 +45,9 @@
 
 
   .chart-info > div:first-child {
-    border-bottom: 1px solid #CBC8D4; /* Adjust color as needed */
-    padding-bottom: 8px; /* Adds spacing between the border and content */
-    margin-bottom: 16px; /* Adds spacing between the two divs */
+    border-bottom: 1px solid #CBC8D4;  
+    padding-bottom: 8px;  
+    margin-bottom: 16px;  
   }
   
 
@@ -92,9 +81,9 @@ font-style: bold;
   display: inline-block;
   width: 14px;
   height: 14px;
-  background-color:  #E66FD2; /* Change color as needed */
-  border-radius: 50%; /* Makes it a circle */
-  margin-right: 4px; /* Adds spacing between text and circle */
+  background-color:  #E66FD2; 
+  border-radius: 50%;  
+  margin-right: 4px;  
 }
 
 
@@ -103,8 +92,8 @@ font-style: bold;
   width: 14px;
   height: 14px;
   background-color: #8C6FE6;
-  border-radius: 50%; /* Makes it a circle */
-  margin-right: 4px /* Adds spacing between text and circle */
+  border-radius: 50%;  
+  margin-right: 4px  
 }
 
 .arrowUp, .arrowDown{

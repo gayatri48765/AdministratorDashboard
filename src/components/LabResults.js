@@ -1,5 +1,5 @@
 import React from 'react';
-import './labResults.css'; 
+import './css/labResults.css'; 
 import downloadIcon from './images/icons/download_FILL0_wght300_GRAD0_opsz24 (1).svg'
 
 const LabResults = ({ labResults }) => {

@@ -16,7 +16,7 @@
   
   .patients-header h2 {
     margin: 0px;
-    color: var(--unnamed-color-072635); /* Use your design color */
+    color: var(--unnamed-color-072635);  
   }
   
   .search-icon img {
@@ -24,19 +24,17 @@
   }
   
   .patients-list {
-    height: 961px; /* Fixed height for scrollable list */
-    overflow-y: auto; /* Adds vertical scroll */
+    height: 961px;
+    overflow-y: auto; 
   }
   
   .patient-card {
     display: flex;
     align-items: center;
-    background-color: var(--unnamed-color-ffffff); /* Use your design color */
+    background-color: var(--unnamed-color-ffffff);  
     border-radius: 8px;
     margin-right: 20px;
     margin-bottom: 32px;
-
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
   }
   
   .patient-photo {
@@ -44,7 +42,7 @@
   }
   
   .patientList-info {
-    flex: 1; /* Takes remaining space */
+    flex: 1; 
   }
   
   .patientList-info h3 {

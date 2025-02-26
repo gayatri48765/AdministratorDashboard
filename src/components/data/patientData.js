@@ -9,10 +9,8 @@ import Layer6 from '../images/users/Layer 6.png'
 import Layer7 from '../images/users/Layer 7.png'
 import Layer9 from '../images/users/Layer 9.png'
 import Layer10 from '../images/users/Layer 10.png'
-// import Layer11 from '../images/users/'
 import Layer12 from '../images/users/Layer 12.png'
 import Layer13 from '../images/users/pexels-photo-1222271.png'
-//1326 12 10 9 4 5 7 pix
 const initialPatients = [
   { id: 1, name: "Emily Williams", age: 18, gender: "Female", photo: Layer8 },
   { id: 2, name: "Ryan Johnson", age: 45, gender: "Male", photo: Layer1 },

@@ -1,13 +1,12 @@
-// components/BloodPressureChart/BloodPressureChart.js
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart, registerables } from 'chart.js';
-import './bloodPressureChart.css';
+import './css/bloodPressureChart.css';
 import expandIcon from './images/icons/expand.png'
 import arrowUp from './images/icons/ArrowUp.svg'
 
 import arrowDown from './images/icons/ArrowDown.svg'
 
-Chart.register(...registerables); // Register all Chart.js components
+Chart.register(...registerables);  
 
 const BloodPressureChart = ({diagnosisHistory}) => {
   const chartRef = useRef(null); // Ref for the chart canvas
@@ -16,11 +15,7 @@ const BloodPressureChart = ({diagnosisHistory}) => {
 
 
   useEffect(() => {
-  
-  // Extract the first 5 records
   const firstFiveRecords = diagnosisHistory.slice(0, 5);
-  
-  // Initialize systolic and diastolic arrays
   const systolicValues = firstFiveRecords.map(record => record.blood_pressure.systolic.value);
   const diastolicValues = firstFiveRecords.map(record => record.blood_pressure.diastolic.value);
   console.log(firstFiveRecords)
@@ -40,72 +35,35 @@ firstFiveRecords.forEach(record => {
     }
 });
 
-  
-  // Define the updated data object
   const data = {
       labels: firstFiveRecords.map((record, index) => ` ${record.month.slice(0,3)},${record.year}`), // Generic labels
       datasets: [
           {
               label: 'Systolic Blood Pressure',
               data: systolicValues,
-              borderColor: '#E66FD2', // Orange color for systolic
-              backgroundColor: '#E66FD2',// Light orange fill
+              borderColor: '#E66FD2',  
+              backgroundColor: '#E66FD2',
               borderWidth: 2,
-              tension: 0.4, // Smooth line
+              tension: 0.4,
           },
           {
               label: 'Diastolic Blood Pressure',
               data: diastolicValues,
-              borderColor: '#8C6FE6', // Blue color for diastolic
-              backgroundColor: '#8C6FE6', // Light blue fill
+              borderColor: '#8C6FE6',  
+              backgroundColor: '#8C6FE6',  
               borderWidth: 2,
-              tension: 0.4, // Smooth line
+              tension: 0.4,  
           },
       ],
   };
-  
-  // Output result to console (for debugging)
   console.log(data);
-
-    // Chart configuration
-    // const config = {
-    //   type: 'line', // Line chart
-    //   data: data,
-    //   options: {
-    //     responsive: true,
-    //     maintainAspectRatio: false,
-    //     scales: {
-    //       y: {
-    //         beginAtZero: false,
-    //         title: {
-    //           display: true,
-    //           text: 'Blood Pressure (mmHg)',
-    //         },
-    //       },
-    //       x: {
-    //         title: {
-    //           display: true,
-    //           text: 'Year',
-    //         },
-    //       },
-    //     },
-    //     plugins: {
-    //       legend: {
-    //         position: 'top', // Position of the legend
-    //       },
-    //       tooltip: {
-    //         enabled: true, // Enable tooltips
-    //       },
-    //     },
-    //   },
-    // };
 
     const config = {
       type: 'line',
       data: data,
       options: {
         responsive: true,
-        maintainAspectRatio: false, // Allow height to be controlled
+        maintainAspectRatio: false, 
         scales: {
           y: {
             beginAtZero: false,
@@ -121,19 +79,16 @@ firstFiveRecords.forEach(record => {
         },
         plugins: {
           legend: {
-            display: false, // Disable the legend
+            display: false,  
           },
           tooltip: {
-            enabled: true, // Enable tooltips
+            enabled: true, 
           },
         },
       },
     };
-
-    // Create the chart
     const chart = new Chart(chartRef.current, config);
 
-    // Cleanup function to destroy the chart on unmount
     return () => {
       chart.destroy();
     };

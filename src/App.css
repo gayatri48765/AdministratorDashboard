@@ -1,7 +1,6 @@
 /* Global Styles */
 :root {
     --design-width: 1600px;
-    /* --design-height: 1195px; */
   }
   
   body {
@@ -17,7 +16,6 @@
   
   .main-section {
     display: flex;
-    /* flex-wrap: wrap; */
     gap: 33px;
   }
   
@@ -35,10 +33,8 @@
 
   }
   
-  /* Responsive Styles */
   @media (max-width: 1024px) {
     .main-section {
-      /* flex-direction: column; */
     }
   }
   
@@ -47,15 +43,6 @@
       min-width: 100%;
     }
   }
-
-  /* Default styles (for large screens) */
-
-/* 📱 Extra Small Devices (Phones) - up to 480px */
-@media (min-width: 480px) {
-}
-
-@media (min-width: 768px) {
-}
 
 @media (min-width: 1024px) {
 .blood-pressure-chart {
@@ -72,47 +59,36 @@
 
 @media (min-width: 1440px) {
   .chart-info > div:first-child {
-    border-bottom: 1px solid #CBC8D4; /* Adjust color as needed */
-    padding-bottom: 8px; /* Adds spacing between the border and content */
-    margin-bottom: 16px; /* Adds spacing between the two divs */
+    border-bottom: 1px solid #CBC8D4; 
+    padding-bottom: 8px;  
+    margin-bottom: 16px;  
   }
   .chart-info{
     flex-direction: column;
     justify-content: start;
   }
 .blood-pressure-chart {
-
-  grid-template-columns: 3fr 1fr; /* 3:1 ratio */
+  grid-template-columns: 3fr 1fr;  
 }
 }
 
-@media (max-width: 1600px) {
+ 
 
-  /* .container{
-    max-width: var(--design-width);
-  } */
-  
-}
-
-  /* Width of the scrollbar */
 ::-webkit-scrollbar {
-  width: 6px; /* Vertical scrollbar */
-  height: 8px; /* Horizontal scrollbar */
+  width: 6px;  
+  height: 8px;  
 }
 
-/* Background of the scrollbar track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
   border-radius: 10px;
 }
 
-/* Scrollbar thumb (the moving part) */
 ::-webkit-scrollbar-thumb {
   background: #072635; 
   border-radius: 10px;
 }
 
-/* Scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #072635; 
 }

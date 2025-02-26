@@ -19,12 +19,12 @@
 }
 
 .scrollable-list {
-    height: 207px; /* Fixed height for scrollable list */
-    overflow-y: auto; /* Adds vertical scroll */
+    height: 207px; 
+    overflow-y: auto; 
   }
   
   .list-item:hover {
-    background-color: #f0f0f0; /* Hover effect */
+    background-color: #f0f0f0; 
   }
   
   .list-item span {
